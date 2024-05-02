@@ -1,42 +1,210 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QUINELOMAR'S</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QUINELOMAR'S</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 50%;
+        margin: 0 auto;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    th:nth-child(odd), td:nth-child(odd) {
+        width: 10%;
+    }
+    th:nth-child(even), td:nth-child(even) {
+        width: 30%;
+    }
+    .selected {
+        background-color: yellow;
+    }
+    .input-field {
+        width: 50%;
+        margin: 20px auto;
+        text-align: center;
+    }
+    input[type="text"] {
+        padding: 5px;
+        width: 80%;
+        box-sizing: border-box;
+    }
+    input[type="number"] {
+        padding: 5px;
+        width: 20%;
+        box-sizing: border-box;
+    }
+    #summary {
+        margin-top: 20px;
+        text-align: center;
+    }
+</style>
 </head>
 <body>
-    <header>
-        <h1>QUINELOMAR'S</h1>
-        <img src="url_del_logo.png" alt="Logo de QUINELOMAR'S">
-    </header>
-    <main>
-        <table border="1">
-            <tr>
-                <td>L</td><td>L</td><td>L</td><td>L</td><td>L</td><td>L</td><td>L</td><td>L</td><td>L</td>
-            </tr>
-            <tr>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            </tr>
-            <tr>
-                <td></td><td></td><td colspan="7">Imagen y texto</td>
-            </tr>
-            <tr>
-                <td></td><td></td><td colspan="7">Imagen y texto</td>
-            </tr>
-            <tr>
-                <td>V</td><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td>
-            </tr>
-        </table>
-    </main>
-    <footer>
-        <p>Seleccione una opción:</p>
-        <select>
-            <option value="opcion1">Opción 1</option>
-            <option value="opcion2">Opción 2</option>
-            <option value="opcion3">Opción 3</option>
-        </select>
-    </footer>
+<h1 style="text-align: center;">QUINELOMAR'S</h1>
+<table>
+    <tr>
+        <th onclick="selectColumn(1)">LOCAL</th>
+        <th>Columna 2</th>
+        <th onclick="selectColumn(3)">EMPATE</th>
+        <th>Columna 4</th>
+        <th onclick="selectColumn(5)">VISITANTE</th>
+    </tr>
+    <tr>
+        <td onclick="selectCell(this)">LOCAL</td>
+        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
+        <td onclick="selectCell(this)">EMPATE</td>
+        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td onclick="selectCell(this)">VISITANTE</td>
+    </tr>
+ <tr>
+        <td onclick="selectCell(this)">LOCAL</td>
+        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
+        <td onclick="selectCell(this)">EMPATE</td>
+        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td onclick="selectCell(this)">VISITANTE</td>
+    </tr>
+ <tr>
+        <td onclick="selectCell(this)">LOCAL</td>
+        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
+        <td onclick="selectCell(this)">EMPATE</td>
+        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td onclick="selectCell(this)">VISITANTE</td>
+    </tr>
+ <tr>
+        <td onclick="selectCell(this)">LOCAL</td>
+        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
+        <td onclick="selectCell(this)">EMPATE</td>
+        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td onclick="selectCell(this)">VISITANTE</td>
+    </tr>
+ <tr>
+        <td onclick="selectCell(this)">LOCAL</td>
+        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
+        <td onclick="selectCell(this)">EMPATE</td>
+        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td onclick="selectCell(this)">VISITANTE</td>
+    </tr>
+ <tr>
+        <td onclick="selectCell(this)">LOCAL</td>
+        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
+        <td onclick="selectCell(this)">EMPATE</td>
+        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td onclick="selectCell(this)">VISITANTE</td>
+    </tr>
+ <tr>
+        <td onclick="selectCell(this)">LOCAL</td>
+        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
+        <td onclick="selectCell(this)">EMPATE</td>
+        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td onclick="selectCell(this)">VISITANTE</td>
+    </tr>
+ <tr>
+        <td onclick="selectCell(this)">LOCAL</td>
+        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
+        <td onclick="selectCell(this)">EMPATE</td>
+        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td onclick="selectCell(this)">VISITANTE</td>
+    </tr>
+ <tr>
+        <td onclick="selectCell(this)">LOCAL</td>
+        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
+        <td onclick="selectCell(this)">EMPATE</td>
+        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td onclick="selectCell(this)">VISITANTE</td>
+    </tr>
+    <!-- Repite las filas para las 9 filas -->
+</table>
+
+<div class="input-field">
+    <input type="number" id="total-goles" min="0" placeholder="Total de goles">
+</div>
+
+<div class="input-field">
+    <input type="text" id="nombre-usuario" placeholder="Nombre o Apodo">
+</div>
+
+<div id="summary"></div>
+
+<div class="input-field">
+    <button onclick="sendWhatsAppMessage()">Enviar por WhatsApp</button>
+</div>
+
+<script>
+    function selectCell(cell) {
+        var row = cell.parentNode;
+        var cells = row.getElementsByTagName("td");
+        for (var i = 0; i < cells.length; i++) {
+            cells[i].classList.remove("selected");
+        }
+        cell.classList.add("selected");
+        updateSummary();
+    }
+
+    function selectColumn(column) {
+        var table = document.getElementsByTagName("table")[0];
+        var rows = table.getElementsByTagName("tr");
+        for (var i = 0; i < rows.length; i++) {
+            var cells = rows[i].getElementsByTagName("td");
+            for (var j = 0; j < cells.length; j++) {
+                if (j == column - 1) {
+                    cells[j].classList.toggle("selected");
+                }
+            }
+        }
+        updateSummary();
+    }
+
+    function updateSummary() {
+        var summary = document.getElementById("summary");
+        var selectedCells = document.querySelectorAll(".selected");
+        var nombreUsuario = document.getElementById("nombre-usuario").value;
+        var totalGoles = document.getElementById("total-goles").value;
+        var summaryText = "Resumen: ";
+        selectedCells.forEach(function(cell, index) {
+            if (index > 0) {
+                summaryText += " - ";
+            }
+            summaryText += cell.textContent.trim();
+        });
+        summaryText += " - " + nombreUsuario + " - " + totalGoles + " goles";
+        summary.textContent = summaryText;
+    }
+
+    function sendWhatsAppMessage() {
+        var selectedCells = document.querySelectorAll(".selected");
+        var nombreUsuario = document.getElementById("nombre-usuario").value;
+        var totalGoles = document.getElementById("total-goles").value;
+        var message = "Resumen: ";
+        selectedCells.forEach(function(cell, index) {
+            if (index > 0) {
+                message += " - ";
+            }
+            message += cell.textContent.trim();
+        });
+        message += " - " + nombreUsuario + " - " + totalGoles + " goles";
+        var phoneNumber = "3336263675";
+        var whatsappUrl = "https://wa.me/" + 3336263675 + "/?text=" + encodeURIComponent(message);
+        window.open(whatsappUrl, "_blank");
+    }
+
+    // Actualizar resumen al cambiar el nombre/apodo
+    document.getElementById("nombre-usuario").addEventListener("change", function() {
+        updateSummary();
+    });
+
+    // Actualizar resumen al cambiar el total de goles
+    document.getElementById("total-goles").addEventListener("change", function() {
+        updateSummary();
+    });
+</script>
 </body>
 </html>
