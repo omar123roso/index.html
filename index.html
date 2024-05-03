@@ -42,9 +42,60 @@
         width: 20%;
         box-sizing: border-box;
     }
-    #summary {
+    .historial-item {
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .historial-item button {
+        margin-left: 10px;
+        padding: 5px 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #ff6347; /* Tomato */
+        color: white;
+        cursor: pointer;
+    }
+    #historial {
         margin-top: 20px;
         text-align: center;
+    }
+    #costo-total {
+        margin: 5px auto;
+        padding: 10px;
+        font-size: 18px;
+        width: 10%;
+        background-color: #87CEEB; /* SkyBlue */
+        border-radius: 10px;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-right: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .btn-whatsapp {
+        background-color: green;
+        color: white;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .btn-aleatorio {
+        background-color: blue;
+        color: white;
+    }
+    .btn-agregar {
+        background-color: red;
+        color: white;
+    }
+    .btn-limpiar {
+        background-color: grey;
+        color: white;
     }
 </style>
 </head>
@@ -52,75 +103,67 @@
 <h1 style="text-align: center;">QUINELOMAR'S</h1>
 <table>
     <tr>
-        <th onclick="selectColumn(1)">LOCAL</th>
+        <th>LOCAL</th>
         <th>Columna 2</th>
-        <th onclick="selectColumn(3)">EMPATE</th>
+        <th>EMPATE</th>
         <th>Columna 4</th>
-        <th onclick="selectColumn(5)">VISITANTE</th>
+        <th>VISITANTE</th>
     </tr>
     <tr>
         <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
+        <td><img src="america.png" alt="amierdica" style="width: 25%;"></td>
         <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td><img src="pachuca.png" alt="Imagen 2" style="width: 25%;" </td>
         <td onclick="selectCell(this)">VISITANTE</td>
     </tr>
  <tr>
         <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="Diseñador.jpeg" alt="Imagen 1"></td>
+        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1" style="width: 25%;"></td>
         <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2" style="width: 25%;"></td>
         <td onclick="selectCell(this)">VISITANTE</td>
     </tr>
+
  <tr>
         <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
+        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1" style="width: 25%;"></td>
         <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2" style="width: 25%;"></td>
         <td onclick="selectCell(this)">VISITANTE</td>
     </tr>
+
  <tr>
         <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
+        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1" style="width: 25%;"></td>
         <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2" style="width: 25%;"></td>
         <td onclick="selectCell(this)">VISITANTE</td>
     </tr>
+
  <tr>
         <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
+        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1" style="width: 25%;"></td>
         <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2" style="width: 25%;"></td>
         <td onclick="selectCell(this)">VISITANTE</td>
     </tr>
+
  <tr>
         <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
+        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1" style="width: 25%;"></td>
         <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2" style="width: 25%;"></td>
         <td onclick="selectCell(this)">VISITANTE</td>
     </tr>
+
  <tr>
         <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
+        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1" style="width: 25%;"></td>
         <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
+        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2" style="width: 25%;"></td>
         <td onclick="selectCell(this)">VISITANTE</td>
     </tr>
- <tr>
-        <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
-        <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
-        <td onclick="selectCell(this)">VISITANTE</td>
-    </tr>
- <tr>
-        <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1"></td>
-        <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2"></td>
-        <td onclick="selectCell(this)">VISITANTE</td>
-    </tr>
+
     <!-- Repite las filas para las 9 filas -->
 </table>
 
@@ -132,13 +175,19 @@
     <input type="text" id="nombre-usuario" placeholder="Nombre o Apodo">
 </div>
 
-<div id="summary"></div>
+<div id="costo-total">Costo total: $0</div>
+<div id="historial"></div>
 
 <div class="input-field">
-    <button onclick="sendWhatsAppMessage()">Enviar por WhatsApp</button>
+    <button class="btn btn-aleatorio" onclick="seleccionAleatoria()">Selección Aleatoria</button>
+    <button class="btn btn-agregar" onclick="agregarQuiniela()">Agregar más quinielas</button>
+    <button class="btn btn-limpiar" onclick="limpiarSeleccion()">Limpiar</button>
+    <button class="btn btn-whatsapp" onclick="sendWhatsAppMessage()">Enviar por WhatsApp</button>
 </div>
 
 <script>
+    var costoTotal = 0;
+
     function selectCell(cell) {
         var row = cell.parentNode;
         var cells = row.getElementsByTagName("td");
@@ -146,20 +195,6 @@
             cells[i].classList.remove("selected");
         }
         cell.classList.add("selected");
-        updateSummary();
-    }
-
-    function selectColumn(column) {
-        var table = document.getElementsByTagName("table")[0];
-        var rows = table.getElementsByTagName("tr");
-        for (var i = 0; i < rows.length; i++) {
-            var cells = rows[i].getElementsByTagName("td");
-            for (var j = 0; j < cells.length; j++) {
-                if (j == column - 1) {
-                    cells[j].classList.toggle("selected");
-                }
-            }
-        }
         updateSummary();
     }
 
@@ -180,20 +215,71 @@
     }
 
     function sendWhatsAppMessage() {
+        var historialText = document.getElementById("historial").textContent;
+        var phoneNumber = "tu_numero_de_whatsapp";
+        var whatsappUrl = "https://wa.me/" + phoneNumber + "/?text=" + encodeURIComponent(historialText);
+        window.open(whatsappUrl, "_blank");
+    }
+
+    function seleccionAleatoria() {
+        var table = document.getElementsByTagName("table")[0];
+        var rows = table.getElementsByTagName("tr");
+        for (var i = 1; i < rows.length; i++) {
+            var cells = rows[i].getElementsByTagName("td");
+            var randomIndex = Math.floor(Math.random() * 3); // 0, 1, 2
+            cells[randomIndex * 2].click();
+        }
+    }
+
+    function agregarQuiniela() {
         var selectedCells = document.querySelectorAll(".selected");
         var nombreUsuario = document.getElementById("nombre-usuario").value;
         var totalGoles = document.getElementById("total-goles").value;
-        var message = "Resumen: ";
+        if (nombreUsuario === "" || totalGoles === "") {
+            alert("Debe ingresar su nombre/apodo y el total de goles antes de agregar más quinielas.");
+            return;
+        }
+        var nuevaQuiniela = document.createElement("div");
+        nuevaQuiniela.classList.add("historial-item");
+        nuevaQuiniela.textContent = nombreUsuario + " - " + totalGoles + " goles - ";
         selectedCells.forEach(function(cell, index) {
             if (index > 0) {
-                message += " - ";
+                nuevaQuiniela.textContent += " - ";
             }
-            message += cell.textContent.trim();
+            nuevaQuiniela.textContent += cell.textContent.trim();
         });
-        message += " - " + nombreUsuario + " - " + totalGoles + " goles";
-        var phoneNumber = "3336263675";
-        var whatsappUrl = "https://wa.me/" + 3336263675 + "/?text=" + encodeURIComponent(message);
-        window.open(whatsappUrl, "_blank");
+
+        var deleteButton = document.createElement("button");
+        deleteButton.textContent = "❌"; // Use "❌" for a red X symbol
+        deleteButton.style.color = "red"; // Optional: Set color to red
+        deleteButton.style.backgroundColor = "transparent"; // Optional: Set background color to transparent
+        deleteButton.style.border = "none"; // Optional: Remove border
+        deleteButton.style.cursor = "pointer"; // Optional: Change cursor to pointer
+        deleteButton.onclick = function() {
+            nuevaQuiniela.remove();
+            costoTotal -= 15;
+            document.getElementById("costo-total").textContent = "Costo total: $" + costoTotal;
+        };
+        nuevaQuiniela.appendChild(deleteButton);
+        document.getElementById("historial").appendChild(nuevaQuiniela);
+        costoTotal += 15;
+        document.getElementById("costo-total").textContent = "Costo total: $" + costoTotal;
+        limpiarSeleccion();
+        updateSummary();
+    }
+
+    function limpiarSeleccion() {
+        var table = document.getElementsByTagName("table")[0];
+        var rows = table.getElementsByTagName("tr");
+        for (var i = 1; i < rows.length; i++) {
+            var cells = rows[i].getElementsByTagName("td");
+            for (var j = 0; j < cells.length; j++) {
+                cells[j].classList.remove("selected");
+            }
+        }
+        document.getElementById("nombre-usuario").value = "";
+        document.getElementById("total-goles").value = "";
+        updateSummary();
     }
 
     // Actualizar resumen al cambiar el nombre/apodo
