@@ -97,6 +97,13 @@
         background-color: grey;
         color: white;
     }
+    .image-text-container {
+        display: flex;
+        align-items: center;
+    }
+    .image-text-container img {
+        width: 25%;
+    }
 </style>
 </head>
 <body>
@@ -110,61 +117,23 @@
         <th>VISITANTE</th>
     </tr>
     <tr>
-        <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="america.png" alt="amierdica" style="width: 25%;"></td>
-        <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="pachuca.png" alt="Imagen 2" style="width: 25%;" </td>
-        <td onclick="selectCell(this)">VISITANTE</td>
+        <td onclick="selectCell(this)"> L</td>
+        <td>
+            <div class="image-text-container">
+                <img src="america.png" alt="imagen 1">
+                <span>AMERICA</span>
+            </div>
+        </td>
+        <td onclick="selectCell(this)"> E</td>
+        <td>
+            <div class="image-text-container">
+                <img src="pachuca.png" alt="Imagen 2">
+                <span>PACHUCA</span>
+            </div>
+        </td>
+        <td onclick="selectCell(this)">V</td>
     </tr>
- <tr>
-        <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1" style="width: 25%;"></td>
-        <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2" style="width: 25%;"></td>
-        <td onclick="selectCell(this)">VISITANTE</td>
-    </tr>
-
- <tr>
-        <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1" style="width: 25%;"></td>
-        <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2" style="width: 25%;"></td>
-        <td onclick="selectCell(this)">VISITANTE</td>
-    </tr>
-
- <tr>
-        <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1" style="width: 25%;"></td>
-        <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2" style="width: 25%;"></td>
-        <td onclick="selectCell(this)">VISITANTE</td>
-    </tr>
-
- <tr>
-        <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1" style="width: 25%;"></td>
-        <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2" style="width: 25%;"></td>
-        <td onclick="selectCell(this)">VISITANTE</td>
-    </tr>
-
- <tr>
-        <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1" style="width: 25%;"></td>
-        <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2" style="width: 25%;"></td>
-        <td onclick="selectCell(this)">VISITANTE</td>
-    </tr>
-
- <tr>
-        <td onclick="selectCell(this)">LOCAL</td>
-        <td><img src="ruta/a/la/imagen1.jpg" alt="Imagen 1" style="width: 25%;"></td>
-        <td onclick="selectCell(this)">EMPATE</td>
-        <td><img src="ruta/a/la/imagen2.jpg" alt="Imagen 2" style="width: 25%;"></td>
-        <td onclick="selectCell(this)">VISITANTE</td>
-    </tr>
-
-    <!-- Repite las filas para las 9 filas -->
+ <!-- Repite las filas para las 9 filas -->
 </table>
 
 <div class="input-field">
