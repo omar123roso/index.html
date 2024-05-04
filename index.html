@@ -10,14 +10,14 @@
 <style>
     body {
         background-image: url('cielo 1.jpeg');
-        background-size: 100% 100%;
+        background-size: 50% 150%;
         background-position: center center;
         background-repeat: no-repeat;
         margin: 0;
         padding: 0;
     }
     .container {
-        max-width: 600px;
+        max-width: 540px;
         margin: 20px auto;
         padding: 20px;
         background-color: rgba(255, 255, 255, 0.8);
@@ -318,41 +318,6 @@
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
-<tr>
-            <td onclick="selectCell(this)">L</td>
-            <td>
-                <div class="image-text-container">
-                    <img src="logo.jpeg" alt="imagen 1">
-                    <span>AMERICA</span>
-                </div>
-            </td>
-            <td onclick="selectCell(this)">E</td>
-            <td>
-                <div class="image-text-container">
-                    <span>PACHUCA</span>
-                    <img src="logo.jpeg" alt="Imagen 2">
-                </div>
-            </td>
-            <td onclick="selectCell(this)">V</td>
-        </tr>
-<tr>
-            <td onclick="selectCell(this)">L</td>
-            <td>
-                <div class="image-text-container">
-                    <img src="logo.jpeg" alt="imagen 1">
-                    <span>AMERICA</span>
-                </div>
-            </td>
-            <td onclick="selectCell(this)">E</td>
-            <td>
-                <div class="image-text-container">
-                    <span>PACHUCA</span>
-                    <img src="logo.jpeg" alt="Imagen 2">
-                </div>
-            </td>
-            <td onclick="selectCell(this)">V</td>
-        </tr>
-
         <!-- Filas de la tabla -->
     </table>
     <div class="btn-container-whatsapp">
@@ -440,8 +405,8 @@
         var totalGoles = document.getElementById("total-goles").value;
 
         // Verificar que todos los campos estén completos
-        if (nombreUsuario === "" || totalGoles === "") {
-            alert("Debe ingresar su nombre/apodo y el total de goles antes de agregar más quinielas.");
+        if (totalGoles === "") {
+            alert("Debe ingresar el total de goles antes de agregar más quinielas.");
             return;
         }
 
@@ -476,10 +441,15 @@
             document.getElementById("total").textContent = "TOTAL: $" + costoTotal;
         };
         nuevaQuiniela.appendChild(deleteButton);
+
         document.getElementById("historial").appendChild(nuevaQuiniela);
 
+        // Actualizar el total
         costoTotal += 15;
         document.getElementById("total").textContent = "TOTAL: $" + costoTotal;
+
+        // Limpiar selecciones después de agregar la quiniela
+        limpiarSeleccion();
     }
 
     function limpiarSeleccion() {
@@ -487,20 +457,18 @@
         selectedCells.forEach(function(cell) {
             cell.classList.remove("selected");
         });
-        updateSummary();
+        document.getElementById("total-goles").value = "";
     }
 
-    // Redimensionar la marca de agua
-    function resizeWatermark() {
+    // Función para reducir el tamaño de la marca de agua
+    function reduceWatermarkSize() {
         var watermark = document.getElementById("watermark");
-        var table = document.querySelector("table");
-        watermark.style.maxWidth = table.offsetWidth + "px";
-        watermark.style.maxHeight = table.offsetHeight + "px";
+        watermark.style.width = "150px";
+        watermark.style.height = "100px";
     }
 
-    // Llamar a resizeWatermark al cargar la página y al cambiar el tamaño de la ventana
-    window.onload = resizeWatermark;
-    window.onresize = resizeWatermark;
+    // Llamar a la función para reducir el tamaño de la marca de agua cuando se cargue la página
+    window.onload = reduceWatermarkSize;
 </script>
 </body>
 </html>
