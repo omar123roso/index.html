@@ -5,15 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QUINELOMAR'S</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 <style>
-  body {
-    background-image: url('cielo 1.jpeg');
-    background-size: 100% 150%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-}
+    body {
+        background-image: url('cielo 1.jpeg');
+        background-size: 100% 150%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+    }
     .container {
         max-width: 800px;
         margin: 20px auto;
@@ -54,10 +56,10 @@
         transition: background-color 0.3s;
     }
     td.selected {
-    background-color: #ff3333; /* Cambiar a rojo */
-    color: white; /* Resaltar el color de las letras */
-    font-weight: bold; /* Añadir negrita para resaltar más */
-}
+        background-color: #ff3333;
+        color: white;
+        font-weight: bold;
+    }
     .input-field {
         margin-bottom: 20px;
     }
@@ -78,6 +80,8 @@
     .btn-container-whatsapp {
         text-align: center;
         margin-bottom: 20px;
+        display: flex;
+        justify-content: flex-start; /* Cambiado a flex-start */
     }
 
     .btn-whatsapp {
@@ -121,6 +125,13 @@
         width: 100%;
     }
 
+    .btn-whatsapp-informes {
+        background-color: #2196F3;
+        color: white;
+        width: 100%;
+        max-width: 150px; /* Añadido para reducir el tamaño del botón */
+    }
+
     .btn:hover {
         opacity: 0.8;
     }
@@ -129,7 +140,7 @@
         text-align: center;
         margin-bottom: 20px;
         font-size: 24px;
-        color: black; /* Cambio de color a negro */
+        color: black;
     }
 
     #historial {
@@ -155,7 +166,7 @@
 
     .watermark {
         position: absolute;
-        top: 75%;
+        top: 43%;
         left: 50%;
         transform: translate(-50%, -50%);
         opacity: 0.5;
@@ -174,16 +185,34 @@
         margin-right: 10px;
         margin-left: 10px;
     }
+
+    /* Estilos para pantallas de hasta 600px de ancho (típicamente dispositivos móviles) */
+    @media only screen and (max-width: 600px) {
+        table {
+            font-size: 12px; /* Reducir el tamaño de fuente de la tabla */
+        }
+
+        .image-text-container img {
+            max-width: 30px; /* Reducir el tamaño máximo de las imágenes */
+            max-height: 25px;
+            margin-right: 5px; /* Reducir el margen entre la imagen y el texto */
+            margin-left: 5px;
+        }
+
+        .image-text-container span {
+            font-size: 12px; /* Reducir el tamaño de fuente del texto */
+        }
+    }
 </style>
 </head>
 <body>
 <div class="container">
     <h1>QUINELOMAR'S</h1>
+    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; color: black; font-size: 16px; font-family: 'Anton', sans-serif;">
+        <div>PRECIO: $15 c/u</div>
+        <div>CIERRE: 10/MAYO/2024</div>
+    </div>
     <table>
-        <tr>
-            <th colspan="2">Costo Quiniela: $15</th>
-            <th colspan="3">CIERRE - <span id="fecha-cierre"></span></th>
-        </tr>
         <tr>
             <th>LOCAL</th>
             <th>EQUIPO</th>
@@ -191,11 +220,11 @@
             <th>EQUIPO</th>
             <th>VISITA</th>
         </tr>
-<tr>
+ <tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
-                    <img src="america.png" alt="imagen 1">
+                    <img src="logo.jpeg" alt="imagen 1">
                     <span>AMERICA</span>
                 </div>
             </td>
@@ -203,16 +232,16 @@
             <td>
                 <div class="image-text-container">
                     <span>PACHUCA</span>
-                    <img src="pachuca.png" alt="Imagen 2">
+                    <img src="logo.jpeg" alt="Imagen 2">
                 </div>
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
-<tr>
+ <tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
-                    <img src="america.png" alt="imagen 1">
+                    <img src="logo.jpeg" alt="imagen 1">
                     <span>AMERICA</span>
                 </div>
             </td>
@@ -220,16 +249,16 @@
             <td>
                 <div class="image-text-container">
                     <span>PACHUCA</span>
-                    <img src="pachuca.png" alt="Imagen 2">
+                    <img src="logo.jpeg" alt="Imagen 2">
                 </div>
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
-<tr>
+ <tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
-                    <img src="america.png" alt="imagen 1">
+                    <img src="logo.jpeg" alt="imagen 1">
                     <span>AMERICA</span>
                 </div>
             </td>
@@ -237,16 +266,16 @@
             <td>
                 <div class="image-text-container">
                     <span>PACHUCA</span>
-                    <img src="pachuca.png" alt="Imagen 2">
+                    <img src="logo.jpeg" alt="Imagen 2">
                 </div>
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
-<tr>
+ <tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
-                    <img src="america.png" alt="imagen 1">
+                    <img src="logo.jpeg" alt="imagen 1">
                     <span>AMERICA</span>
                 </div>
             </td>
@@ -254,17 +283,16 @@
             <td>
                 <div class="image-text-container">
                     <span>PACHUCA</span>
-                    <img src="pachuca.png" alt="Imagen 2">
+                    <img src="logo.jpeg" alt="Imagen 2">
                 </div>
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
-          
-<tr>
+ <tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
-                    <img src="america.png" alt="imagen 1">
+                    <img src="logo.jpeg" alt="imagen 1">
                     <span>AMERICA</span>
                 </div>
             </td>
@@ -272,17 +300,16 @@
             <td>
                 <div class="image-text-container">
                     <span>PACHUCA</span>
-                    <img src="pachuca.png" alt="Imagen 2">
+                    <img src="logo.jpeg" alt="Imagen 2">
                 </div>
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
-
-<tr>
+ <tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
-                    <img src="america.png" alt="imagen 1">
+                    <img src="logo.jpeg" alt="imagen 1">
                     <span>AMERICA</span>
                 </div>
             </td>
@@ -290,17 +317,16 @@
             <td>
                 <div class="image-text-container">
                     <span>PACHUCA</span>
-                    <img src="pachuca.png" alt="Imagen 2">
+                    <img src="logo.jpeg" alt="Imagen 2">
                 </div>
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
-
-<tr>
+ <tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
-                    <img src="america.png" alt="imagen 1">
+                    <img src="logo.jpeg" alt="imagen 1">
                     <span>AMERICA</span>
                 </div>
             </td>
@@ -308,16 +334,16 @@
             <td>
                 <div class="image-text-container">
                     <span>PACHUCA</span>
-                    <img src="pachuca.png" alt="Imagen 2">
+                    <img src="logo.jpeg" alt="Imagen 2">
                 </div>
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
-<tr>
+ <tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
-                    <img src="america.png" alt="imagen 1">
+                    <img src="logo.jpeg" alt="imagen 1">
                     <span>AMERICA</span>
                 </div>
             </td>
@@ -325,13 +351,34 @@
             <td>
                 <div class="image-text-container">
                     <span>PACHUCA</span>
-                    <img src="pachuca.png" alt="Imagen 2">
+                    <img src="logo.jpeg" alt="Imagen 2">
+                </div>
+            </td>
+            <td onclick="selectCell(this)">V</td>
+        </tr>
+ <tr>
+            <td onclick="selectCell(this)">L</td>
+            <td>
+                <div class="image-text-container">
+                    <img src="logo.jpeg" alt="imagen 1">
+                    <span>AMERICA</span>
+                </div>
+            </td>
+            <td onclick="selectCell(this)">E</td>
+            <td>
+                <div class="image-text-container">
+                    <span>PACHUCA</span>
+                    <img src="logo.jpeg" alt="Imagen 2">
                 </div>
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
         <!-- Filas de la tabla -->
     </table>
+
+    <div class="btn-container-whatsapp">
+        <button class="btn btn-whatsapp-informes" onclick="sendWhatsAppMessageInformes()"><i class="fab fa-whatsapp"></i> INFORMES</button>
+    </div>
 
     <div class="input-field">
         <input type="number" id="total-goles" min="0" placeholder="Total de goles">
@@ -348,7 +395,7 @@
     </div>
 
     <div class="btn-container-whatsapp">
-        <button class="btn btn-whatsapp" onclick="sendWhatsAppMessage()"><i class="fab fa-whatsapp"></i> Enviar por WhatsApp</button>
+        <button class="btn btn-whatsapp" onclick="sendWhatsAppMessage()"><i class="fab fa-whatsapp"></i> Enviar </button>
     </div>
 
     <div id="total">TOTAL: $0</div>
@@ -393,6 +440,13 @@
         var costoTotal = document.getElementById("total").textContent;
         var phoneNumber = "tu_numero_de_whatsapp";
         var whatsappUrl = "https://wa.me/" + 3336263675 + "/?text=" + encodeURIComponent(historialText + "\n" + costoTotal);
+        window.open(whatsappUrl, "_blank");
+    }
+
+    function sendWhatsAppMessageInformes() {
+        var mensaje = "!!!QUIERO MAS INFORMES SOBRE LAS QUINIELAS!!!⚽😄";
+        var phoneNumber = "tu_numero_de_whatsapp";
+        var whatsappUrl = "https://wa.me/" + 3336263675 + "/?text=" + encodeURIComponent(mensaje);
         window.open(whatsappUrl, "_blank");
     }
 
@@ -477,10 +531,6 @@
     document.getElementById("total-goles").addEventListener("change", function() {
         updateSummary();
     });
-
-    // Mostrar la fecha de cierre
-    var fechaCierre = new Date().toLocaleDateString();
-    document.getElementById("fecha-cierre").textContent = fechaCierre;
 </script>
 </body>
 </html>
