@@ -36,14 +36,13 @@
         width: 100%;
         border-collapse: collapse;
         margin-bottom: 20px;
-        position: relative;
-        z-index: 1;
+        max-width: 100%; /* Añadido para que la tabla no se extienda más allá de la pantalla */
     }
     th, td {
         border: 2px solid #fff;
-        padding: 10px;
+        padding: 5px; /* Reducido el padding para reducir el tamaño de las celdas */
         text-align: center;
-        font-size: 16px;
+        font-size: 12px; /* Reducido el tamaño de la fuente */
         color: #333;
     }
     th {
@@ -65,7 +64,7 @@
     }
     input[type="text"], input[type="number"] {
         width: 100%;
-        padding: 10px;
+        padding: 5px; /* Reducido el padding para reducir el tamaño de los inputs */
         box-sizing: border-box;
         border: 1px solid #ddd;
         border-radius: 5px;
@@ -76,78 +75,63 @@
         display: flex;
         justify-content: space-between;
     }
-
     .btn-container-whatsapp {
         text-align: center;
         margin-bottom: 20px;
         display: flex;
         justify-content: flex-start; /* Cambiado a flex-start */
     }
-
-    .btn-whatsapp {
-        width: 250px;
-    }
-
     .btn {
-        padding: 10px 20px;
+        padding: 5px 10px; /* Reducido el padding de los botones */
         margin: 0;
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 12px; /* Reducido el tamaño de la fuente de los botones */
         transition: background-color 0.3s;
         flex-grow: 1;
     }
-
     .btn-quiniela {
         background-color: #fbbc04;
         color: #333;
-        width: 150px;
+        width: 70px; /* Reducido el ancho de los botones */
     }
-
     .btn-limpiar {
         background-color: #f44336;
         color: white;
-        width: 150px;
+        width: 70px; /* Reducido el ancho de los botones */
         margin-right: 10px;
     }
-
     .btn-aleatorio {
         background-color: #4caf50;
         color: white;
-        width: 150px;
+        width: 70px; /* Reducido el ancho de los botones */
         margin-right: 10px;
     }
-
     .btn-whatsapp {
         background-color: #00e676;
         color: white;
         width: 100%;
     }
-
     .btn-whatsapp-informes {
         background-color: #2196F3;
         color: white;
         width: 100%;
         max-width: 150px; /* Añadido para reducir el tamaño del botón */
     }
-
     .btn:hover {
         opacity: 0.8;
     }
-
     #total {
         text-align: center;
         margin-bottom: 20px;
-        font-size: 24px;
+        font-size: 16px;
         color: black;
     }
-
     #historial {
         text-align: center;
         margin-bottom: 20px;
     }
-
     .historial-item {
         display: inline-block;
         padding: 5px 10px;
@@ -155,60 +139,38 @@
         background-color: #333;
         color: #fff;
         border-radius: 5px;
-        font-size: 12px;
+        font-size: 10px; /* Reducido el tamaño de la fuente */
     }
-
     .historial-item .delete-btn {
         margin-left: 5px;
         color: #dc3545;
         cursor: pointer;
     }
-
     .watermark {
-        position: absolute;
-        top: 43%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0.5;
-        z-index: 0;
-    }
-
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 10;
+    z-index: -1; /* Cambiado a un valor negativo */
+}
     .image-text-container {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-
     .image-text-container img {
-        max-width: 50px;
-        max-height: 35px;
-        margin-right: 10px;
-        margin-left: 10px;
-    }
-
-    /* Estilos para pantallas de hasta 600px de ancho (típicamente dispositivos móviles) */
-    @media only screen and (max-width: 600px) {
-        table {
-            font-size: 12px; /* Reducir el tamaño de fuente de la tabla */
-        }
-
-        .image-text-container img {
-            max-width: 30px; /* Reducir el tamaño máximo de las imágenes */
-            max-height: 25px;
-            margin-right: 5px; /* Reducir el margen entre la imagen y el texto */
-            margin-left: 5px;
-        }
-
-        .image-text-container span {
-            font-size: 12px; /* Reducir el tamaño de fuente del texto */
-        }
+        max-width: 30px; /* Reducido el tamaño de las imágenes */
+        max-height: 20px; /* Reducido el tamaño de las imágenes */
+        margin-right: 5px; /* Reducido el margen para que no se vean tan separadas */
+        margin-left: 5px; /* Reducido el margen para que no se vean tan separadas */
     }
 </style>
 </head>
 <body>
 <div class="container">
     <h1>QUINELOMAR'S</h1>
-    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; color: black; font-size: 16px; font-family: 'Anton', sans-serif;">
+    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; color: black; font-size: 12px; font-family: 'Anton', sans-serif;">
         <div>PRECIO: $15 c/u</div>
         <div>CIERRE: 10/MAYO/2024</div>
     </div>
@@ -220,7 +182,7 @@
             <th>EQUIPO</th>
             <th>VISITA</th>
         </tr>
- <tr>
+<tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
@@ -237,7 +199,7 @@
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
- <tr>
+<tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
@@ -254,7 +216,7 @@
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
- <tr>
+<tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
@@ -271,7 +233,7 @@
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
- <tr>
+<tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
@@ -288,7 +250,7 @@
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
- <tr>
+<tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
@@ -305,7 +267,7 @@
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
- <tr>
+<tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
@@ -322,7 +284,7 @@
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
- <tr>
+<tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
@@ -339,7 +301,7 @@
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
- <tr>
+<tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
@@ -356,7 +318,7 @@
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
- <tr>
+<tr>
             <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
@@ -373,36 +335,48 @@
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
+<tr>
+            <td onclick="selectCell(this)">L</td>
+            <td>
+                <div class="image-text-container">
+                    <img src="logo.jpeg" alt="imagen 1">
+                    <span>AMERICA</span>
+                </div>
+            </td>
+            <td onclick="selectCell(this)">E</td>
+            <td>
+                <div class="image-text-container">
+                    <span>PACHUCA</span>
+                    <img src="logo.jpeg" alt="Imagen 2">
+                </div>
+            </td>
+            <td onclick="selectCell(this)">V</td>
+        </tr>
+
         <!-- Filas de la tabla -->
     </table>
-
     <div class="btn-container-whatsapp">
         <button class="btn btn-whatsapp-informes" onclick="sendWhatsAppMessageInformes()"><i class="fab fa-whatsapp"></i> INFORMES</button>
     </div>
-
     <div class="input-field">
         <input type="number" id="total-goles" min="0" placeholder="Total de goles">
     </div>
-
     <div class="input-field">
         <input type="text" id="nombre-usuario" placeholder="Nombre o Apodo">
     </div>
-
     <div class="btn-container">
         <button class="btn btn-limpiar" onclick="limpiarSeleccion()"><i class="fas fa-broom"></i> Limpiar</button>
         <button class="btn btn-aleatorio" onclick="seleccionAleatoria()"><i class="fas fa-random"></i> Selección Aleatoria</button>
         <button class="btn btn-quiniela" onclick="agregarQuiniela()"><i class="fas fa-plus"></i> Agregar quiniela</button>
     </div>
-
     <div class="btn-container-whatsapp">
         <button class="btn btn-whatsapp" onclick="sendWhatsAppMessage()"><i class="fab fa-whatsapp"></i> Enviar </button>
     </div>
-
     <div id="total">TOTAL: $0</div>
     <div id="historial"></div>
 </div>
 <!-- Agregar marca de agua como fondo de la tabla -->
-<img class="watermark" src="fondo.png" alt="Marca de agua">
+<img id="watermark" class="watermark" src="fondo.png" alt="Marca de agua">
 <script>
     var costoTotal = 0;
 
@@ -503,34 +477,30 @@
         };
         nuevaQuiniela.appendChild(deleteButton);
         document.getElementById("historial").appendChild(nuevaQuiniela);
+
         costoTotal += 15;
         document.getElementById("total").textContent = "TOTAL: $" + costoTotal;
-        limpiarSeleccion();
-        updateSummary();
     }
 
     function limpiarSeleccion() {
-        var table = document.getElementsByTagName("table")[0];
-        var rows = table.getElementsByTagName("tr");
-        for (var i = 1; i < rows.length; i++) {
-            var cells = rows[i].getElementsByTagName("td");
-            for (var j = 0; j < cells.length; j++) {
-                cells[j].classList.remove("selected");
-            }
-        }
-        document.getElementById("total-goles").value = "";
+        var selectedCells = document.querySelectorAll(".selected");
+        selectedCells.forEach(function(cell) {
+            cell.classList.remove("selected");
+        });
         updateSummary();
     }
 
-    // Actualizar resumen al cambiar el nombre/apodo
-    document.getElementById("nombre-usuario").addEventListener("change", function() {
-        updateSummary();
-    });
+    // Redimensionar la marca de agua
+    function resizeWatermark() {
+        var watermark = document.getElementById("watermark");
+        var table = document.querySelector("table");
+        watermark.style.maxWidth = table.offsetWidth + "px";
+        watermark.style.maxHeight = table.offsetHeight + "px";
+    }
 
-    // Actualizar resumen al cambiar el total de goles
-    document.getElementById("total-goles").addEventListener("change", function() {
-        updateSummary();
-    });
+    // Llamar a resizeWatermark al cargar la página y al cambiar el tamaño de la ventana
+    window.onload = resizeWatermark;
+    window.onresize = resizeWatermark;
 </script>
 </body>
 </html>
