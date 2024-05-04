@@ -4,45 +4,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QUINELOMAR'S</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f5f5f5;
-        margin: 0;
-        padding: 0;
-    }
+  body {
+    background-image: url('cielo 1.jpeg');
+    background-size: 100% 150%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
     .container {
         max-width: 800px;
         margin: 20px auto;
         padding: 20px;
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.8);
         border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        position: relative;
     }
     h1 {
         text-align: center;
         color: #333;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+        margin-bottom: 20px;
     }
     table {
         width: 100%;
         border-collapse: collapse;
         margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
     }
     th, td {
-        border: 3px solid #ddd;
-        padding: 0 px;
+        border: 2px solid #fff;
+        padding: 10px;
         text-align: center;
-        font-size: 12px; /* Tamaño de la fuente para las celdas */
+        font-size: 16px;
+        color: #333;
     }
     th {
-        background-color: #f2f2f2;
+        background-color: #333;
+        color: #fff;
     }
     td {
+        background-color: transparent;
         cursor: pointer;
+        transition: background-color 0.3s;
     }
     td.selected {
-        background-color: #ffeb3b;
-    }
+    background-color: #ff3333; /* Cambiar a rojo */
+    color: white; /* Resaltar el color de las letras */
+    font-weight: bold; /* Añadir negrita para resaltar más */
+}
     .input-field {
         margin-bottom: 20px;
     }
@@ -56,65 +71,108 @@
     .btn-container {
         text-align: center;
         margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
     }
+
+    .btn-container-whatsapp {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .btn-whatsapp {
+        width: 250px;
+    }
+
     .btn {
         padding: 10px 20px;
-        margin: 0 5px;
+        margin: 0;
         border: none;
         border-radius: 5px;
         cursor: pointer;
         font-size: 16px;
+        transition: background-color 0.3s;
+        flex-grow: 1;
     }
-    .btn-whatsapp {
-        background-color: #25D366;
-        color: #fff;
+
+    .btn-quiniela {
+        background-color: #fbbc04;
+        color: #333;
+        width: 150px;
     }
-    .btn-aleatorio {
-        background-color: #007bff;
-        color: #fff;
-    }
-    .btn-agregar {
-        background-color: #28a745;
-        color: #fff;
-    }
+
     .btn-limpiar {
-        background-color: #dc3545;
-        color: #fff;
+        background-color: #f44336;
+        color: white;
+        width: 150px;
+        margin-right: 10px;
     }
-    #costo-total {
+
+    .btn-aleatorio {
+        background-color: #4caf50;
+        color: white;
+        width: 150px;
+        margin-right: 10px;
+    }
+
+    .btn-whatsapp {
+        background-color: #00e676;
+        color: white;
+        width: 100%;
+    }
+
+    .btn:hover {
+        opacity: 0.8;
+    }
+
+    #total {
         text-align: center;
         margin-bottom: 20px;
-        font-size: 18px;
+        font-size: 24px;
+        color: black; /* Cambio de color a negro */
     }
+
     #historial {
         text-align: center;
+        margin-bottom: 20px;
     }
+
     .historial-item {
         display: inline-block;
         padding: 5px 10px;
         margin: 5px;
-        background-color: #007bff;
+        background-color: #333;
         color: #fff;
         border-radius: 5px;
-        font-size: 12px; /* Tamaño de la fuente para los elementos del historial */
+        font-size: 12px;
     }
+
     .historial-item .delete-btn {
         margin-left: 5px;
         color: #dc3545;
         cursor: pointer;
     }
+
+    .watermark {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.5;
+        z-index: 0;
+    }
+
     .image-text-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
     }
+
     .image-text-container img {
-        width: 13%; /* Tamaño de las imágenes */
-    }
-    .image-text-container span {
-        flex: 1;
-        margin-right: 5px; /* Ajusta esta distancia según tu preferencia */
-        font-size: 12px; /* Tamaño de la fuente para el texto */
+        max-width: 50px;
+        max-height: 35px;
+        margin-right: 10px;
+        margin-left: 10px;
     }
 </style>
 </head>
@@ -123,21 +181,94 @@
     <h1>QUINELOMAR'S</h1>
     <table>
         <tr>
+            <th colspan="2">Costo Quiniela: $15</th>
+            <th colspan="3">CIERRE - <span id="fecha-cierre"></span></th>
+        </tr>
+        <tr>
             <th>LOCAL</th>
-            <th>Columna 2</th>
+            <th>EQUIPO</th>
             <th>EMPATE</th>
-            <th>Columna 4</th>
-            <th>VISITANTE</th>
+            <th>EQUIPO</th>
+            <th>VISITA</th>
         </tr>
 <tr>
-            <td onclick="selectCell(this)"> L</td>
+            <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
                     <img src="america.png" alt="imagen 1">
                     <span>AMERICA</span>
                 </div>
             </td>
-            <td onclick="selectCell(this)"> E</td>
+            <td onclick="selectCell(this)">E</td>
+            <td>
+                <div class="image-text-container">
+                    <span>PACHUCA</span>
+                    <img src="pachuca.png" alt="Imagen 2">
+                </div>
+            </td>
+            <td onclick="selectCell(this)">V</td>
+        </tr>
+<tr>
+            <td onclick="selectCell(this)">L</td>
+            <td>
+                <div class="image-text-container">
+                    <img src="america.png" alt="imagen 1">
+                    <span>AMERICA</span>
+                </div>
+            </td>
+            <td onclick="selectCell(this)">E</td>
+            <td>
+                <div class="image-text-container">
+                    <span>PACHUCA</span>
+                    <img src="pachuca.png" alt="Imagen 2">
+                </div>
+            </td>
+            <td onclick="selectCell(this)">V</td>
+        </tr>
+<tr>
+            <td onclick="selectCell(this)">L</td>
+            <td>
+                <div class="image-text-container">
+                    <img src="america.png" alt="imagen 1">
+                    <span>AMERICA</span>
+                </div>
+            </td>
+            <td onclick="selectCell(this)">E</td>
+            <td>
+                <div class="image-text-container">
+                    <span>PACHUCA</span>
+                    <img src="pachuca.png" alt="Imagen 2">
+                </div>
+            </td>
+            <td onclick="selectCell(this)">V</td>
+        </tr>
+<tr>
+            <td onclick="selectCell(this)">L</td>
+            <td>
+                <div class="image-text-container">
+                    <img src="america.png" alt="imagen 1">
+                    <span>AMERICA</span>
+                </div>
+            </td>
+            <td onclick="selectCell(this)">E</td>
+            <td>
+                <div class="image-text-container">
+                    <span>PACHUCA</span>
+                    <img src="pachuca.png" alt="Imagen 2">
+                </div>
+            </td>
+            <td onclick="selectCell(this)">V</td>
+        </tr>
+          
+<tr>
+            <td onclick="selectCell(this)">L</td>
+            <td>
+                <div class="image-text-container">
+                    <img src="america.png" alt="imagen 1">
+                    <span>AMERICA</span>
+                </div>
+            </td>
+            <td onclick="selectCell(this)">E</td>
             <td>
                 <div class="image-text-container">
                     <span>PACHUCA</span>
@@ -148,159 +279,58 @@
         </tr>
 
 <tr>
-<tr>
-            <td onclick="selectCell(this)"> L</td>
+            <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
-                    <img src="leon.png" alt="imagen 1">
-                    <span>LEON</span>
+                    <img src="america.png" alt="imagen 1">
+                    <span>AMERICA</span>
                 </div>
             </td>
-            <td onclick="selectCell(this)"> E</td>
+            <td onclick="selectCell(this)">E</td>
             <td>
                 <div class="image-text-container">
-                    <span>MAZATLAN</span>
-                    <img src="mazatlan.png" alt="Imagen 2">
-                </div>
-            </td>
-            <td onclick="selectCell(this)">V</td>
-        </tr>
-
-<tr>
-<tr>
-            <td onclick="selectCell(this)"> L</td>
-            <td>
-                <div class="image-text-container">
-                    <img src="necaxa.png" alt="imagen 1">
-                    <span>NEXACA</span>
-                </div>
-            </td>
-            <td onclick="selectCell(this)"> E</td>
-            <td>
-                <div class="image-text-container">
-                    <span>ATLAS</span>
-                    <img src="atlas.png" alt="Imagen 2">
+                    <span>PACHUCA</span>
+                    <img src="pachuca.png" alt="Imagen 2">
                 </div>
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
 
 <tr>
-<tr>
-            <td onclick="selectCell(this)"> L</td>
+            <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
-                    <img src="juarez.png" alt="imagen 1">
-                    <span>BRAVOS</span>
+                    <img src="america.png" alt="imagen 1">
+                    <span>AMERICA</span>
                 </div>
             </td>
-            <td onclick="selectCell(this)"> E</td>
+            <td onclick="selectCell(this)">E</td>
             <td>
                 <div class="image-text-container">
-                    <span>MONTERREY</span>
-                    <img src="monterrey.png" alt="Imagen 2">
-                </div>
-            </td>
-            <td onclick="selectCell(this)">V</td>
-        </tr>
-
-<tr>
-<tr>
-            <td onclick="selectCell(this)"> L</td>
-            <td>
-                <div class="image-text-container">
-                    <img src="guadalajara.png" alt="imagen 1">
-                    <span>CHIVAS</span>
-                </div>
-            </td>
-            <td onclick="selectCell(this)"> E</td>
-            <td>
-                <div class="image-text-container">
-                    <span>SAN LUIS </span>
-                    <img src="atleticosl.png" alt="Imagen 2">
+                    <span>PACHUCA</span>
+                    <img src="pachuca.png" alt="Imagen 2">
                 </div>
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
-
 <tr>
-<tr>
-            <td onclick="selectCell(this)"> L</td>
+            <td onclick="selectCell(this)">L</td>
             <td>
                 <div class="image-text-container">
-                    <img src="santos.png" alt="imagen 1">
-                    <span>SANTOS</span>
+                    <img src="america.png" alt="imagen 1">
+                    <span>AMERICA</span>
                 </div>
             </td>
-            <td onclick="selectCell(this)"> E</td>
+            <td onclick="selectCell(this)">E</td>
             <td>
                 <div class="image-text-container">
-                    <span>QUERETARO</span>
-                    <img src="queretaro.png" alt="Imagen 2">
-                </div>
-            </td>
-            <td onclick="selectCell(this)">V</td>
-        </tr>
-
-<tr>
-<tr>
-            <td onclick="selectCell(this)"> L</td>
-            <td>
-                <div class="image-text-container">
-                    <img src="pumas.png" alt="imagen 1">
-                    <span>PUMAS</span>
-                </div>
-            </td>
-            <td onclick="selectCell(this)"> E</td>
-            <td>
-                <div class="image-text-container">
-                    <span>PUEBLA</span>
-                    <img src="puebla.png" alt="Imagen 2">
+                    <span>PACHUCA</span>
+                    <img src="pachuca.png" alt="Imagen 2">
                 </div>
             </td>
             <td onclick="selectCell(this)">V</td>
         </tr>
-
-<tr>
-<tr>
-            <td onclick="selectCell(this)"> L</td>
-            <td>
-                <div class="image-text-container">
-                    <img src="tigres.png" alt="imagen 1">
-                    <span>TIGRES</span>
-                </div>
-            </td>
-            <td onclick="selectCell(this)"> E</td>
-            <td>
-                <div class="image-text-container">
-                    <span>TOLUCA</span>
-                    <img src="toluca.png" alt="Imagen 2">
-                </div>
-            </td>
-            <td onclick="selectCell(this)">V</td>
-        </tr>
-
-<tr>
-<tr>
-            <td onclick="selectCell(this)"> L</td>
-            <td>
-                <div class="image-text-container">
-                    <img src="tijuana.png" alt="imagen 1">
-                    <span>XOLOS</span>
-                </div>
-            </td>
-            <td onclick="selectCell(this)"> E</td>
-            <td>
-                <div class="image-text-container">
-                    <span>CRUZ AZUL</span>
-                    <img src="cruzazul.png" alt="Imagen 2">
-                </div>
-            </td>
-            <td onclick="selectCell(this)">V</td>
-        </tr>
-
-<tr>
-        <!-- Repite las filas para las 9 filas -->
+        <!-- Filas de la tabla -->
     </table>
 
     <div class="input-field">
@@ -311,17 +341,21 @@
         <input type="text" id="nombre-usuario" placeholder="Nombre o Apodo">
     </div>
 
-    <div id="costo-total">Costo total: $0</div>
-    <div id="historial"></div>
-
     <div class="btn-container">
-        <button class="btn btn-aleatorio" onclick="seleccionAleatoria()">Selección Aleatoria</button>
-        <button class="btn btn-agregar" onclick="agregarQuiniela()">Agregar quiniela</button>
-        <button class="btn btn-limpiar" onclick="limpiarSeleccion()">Limpiar</button>
-        <button class="btn btn-whatsapp" onclick="sendWhatsAppMessage()">Enviar por WhatsApp</button>
+        <button class="btn btn-limpiar" onclick="limpiarSeleccion()"><i class="fas fa-broom"></i> Limpiar</button>
+        <button class="btn btn-aleatorio" onclick="seleccionAleatoria()"><i class="fas fa-random"></i> Selección Aleatoria</button>
+        <button class="btn btn-quiniela" onclick="agregarQuiniela()"><i class="fas fa-plus"></i> Agregar quiniela</button>
     </div>
-</div>
 
+    <div class="btn-container-whatsapp">
+        <button class="btn btn-whatsapp" onclick="sendWhatsAppMessage()"><i class="fab fa-whatsapp"></i> Enviar por WhatsApp</button>
+    </div>
+
+    <div id="total">TOTAL: $0</div>
+    <div id="historial"></div>
+</div>
+<!-- Agregar marca de agua como fondo de la tabla -->
+<img class="watermark" src="fondo.png" alt="Marca de agua">
 <script>
     var costoTotal = 0;
 
@@ -347,13 +381,18 @@
             summaryText += cell.textContent.trim();
         });
         summaryText += " - " + nombreUsuario + " - " + totalGoles + " goles";
-        document.getElementById("costo-total").textContent = "Costo total: $" + costoTotal;
+        document.getElementById("total").textContent = "TOTAL: $" + costoTotal;
     }
 
     function sendWhatsAppMessage() {
-        var historialText = document.getElementById("historial").textContent;
-        var phoneNumber = "3336263675";
-        var whatsappUrl = "https://wa.me/" + phoneNumber + "/?text=" + encodeURIComponent(historialText);
+        var historialItems = document.querySelectorAll(".historial-item");
+        var historialText = "";
+        historialItems.forEach(function(item, index) {
+            historialText += item.textContent.replace("❌", "").trim() + "\n";
+        });
+        var costoTotal = document.getElementById("total").textContent;
+        var phoneNumber = "tu_numero_de_whatsapp";
+        var whatsappUrl = "https://wa.me/" + 3336263675 + "/?text=" + encodeURIComponent(historialText + "\n" + costoTotal);
         window.open(whatsappUrl, "_blank");
     }
 
@@ -371,10 +410,25 @@
         var selectedCells = document.querySelectorAll(".selected");
         var nombreUsuario = document.getElementById("nombre-usuario").value;
         var totalGoles = document.getElementById("total-goles").value;
+
+        // Verificar que todos los campos estén completos
         if (nombreUsuario === "" || totalGoles === "") {
             alert("Debe ingresar su nombre/apodo y el total de goles antes de agregar más quinielas.");
             return;
         }
+
+        // Verificar que se haya seleccionado una opción en cada fila de la tabla
+        var table = document.getElementsByTagName("table")[0];
+        var rows = table.getElementsByTagName("tr");
+        for (var i = 1; i < rows.length; i++) {
+            var cells = rows[i].getElementsByTagName("td");
+            if (!Array.from(cells).some(cell => cell.classList.contains("selected"))) {
+                alert("Debe seleccionar una opción para cada partido antes de agregar más quinielas.");
+                return;
+            }
+        }
+
+        // Si todos los campos están completos, agregar la quiniela al historial
         var nuevaQuiniela = document.createElement("div");
         nuevaQuiniela.classList.add("historial-item");
         nuevaQuiniela.textContent = nombreUsuario + " - " + totalGoles + " goles - ";
@@ -386,17 +440,17 @@
         });
 
         var deleteButton = document.createElement("span");
-        deleteButton.textContent = "❌"; // Use "❌" for a red X symbol
+        deleteButton.textContent = "❌";
         deleteButton.classList.add("delete-btn");
         deleteButton.onclick = function() {
             nuevaQuiniela.remove();
             costoTotal -= 15;
-            document.getElementById("costo-total").textContent = "Costo total: $" + costoTotal;
+            document.getElementById("total").textContent = "TOTAL: $" + costoTotal;
         };
         nuevaQuiniela.appendChild(deleteButton);
         document.getElementById("historial").appendChild(nuevaQuiniela);
         costoTotal += 15;
-        document.getElementById("costo-total").textContent = "Costo total: $" + costoTotal;
+        document.getElementById("total").textContent = "TOTAL: $" + costoTotal;
         limpiarSeleccion();
         updateSummary();
     }
@@ -423,6 +477,10 @@
     document.getElementById("total-goles").addEventListener("change", function() {
         updateSummary();
     });
+
+    // Mostrar la fecha de cierre
+    var fechaCierre = new Date().toLocaleDateString();
+    document.getElementById("fecha-cierre").textContent = fechaCierre;
 </script>
 </body>
 </html>
